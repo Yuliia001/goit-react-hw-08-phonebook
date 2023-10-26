@@ -7,10 +7,12 @@ export const Label = styled.label`
   gap: 10px;
   margin-bottom: 10px;
   font-size: 24px;
+  color: #ff020f;
 `;
 export const Input = styled.input`
   padding: 14px;
   margin-bottom: 12px;
   border: 1px solid #ccc;
   border-radius: 4px;
+  color: #04273b;
 `;

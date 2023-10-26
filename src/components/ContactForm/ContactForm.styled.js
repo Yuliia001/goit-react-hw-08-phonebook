@@ -8,7 +8,7 @@ export const StyledForm = styled(Form)`
   border: 1px solid #04273b;
   padding: 24px;
   border-radius: 5px;
-  margin-bottom: 10px;
+  margin-bottom: 16px;
 `;
 export const Input = styled(Field)`
   padding: 14px;

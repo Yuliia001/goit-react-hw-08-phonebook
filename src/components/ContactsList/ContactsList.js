@@ -1,4 +1,4 @@
-import { ListItem, Span, Text, Title } from './ContactsList.styled';
+import { ListItem, Span, Text, Title, Info } from './ContactsList.styled';
 import { useDispatch, useSelector } from 'react-redux';
 import { deleteContact } from 'redux/contacts/operations';
 import { filteredContacts } from 'redux/contacts/selectors';
@@ -23,7 +23,7 @@ export const ContactList = () => {
           ))}
         </ul>
       ) : (
-        <Text>Contact list ist empty!</Text>
+        <Info>Contact list ist empty!</Info>
       )}
     </>
   );

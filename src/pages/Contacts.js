@@ -2,6 +2,7 @@ import { ContactForm } from 'components/ContactForm/ContactForm';
 import { Wrapper } from 'components/ContactForm/ContactForm.styled';
 import { ContactList } from 'components/ContactsList/ContactsList';
 import { Error } from 'components/Error/Error.styled';
+import { Filter } from 'components/Filter/Filter';
 import { Loader } from 'components/Loader/Loader';
 import { useEffect } from 'react';
 import { Helmet } from 'react-helmet';
@@ -25,6 +26,7 @@ export default function Contacts() {
       </Helmet>
       <ContactForm />
       {isLoading && <Loader />}
+      <Filter />
       {!error && !isLoading && <ContactList />}
       {error && (
         <Error>Oops! Something went wrong. Please reload the page.</Error>

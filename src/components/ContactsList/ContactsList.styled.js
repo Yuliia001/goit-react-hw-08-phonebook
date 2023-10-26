@@ -21,3 +21,7 @@ export const Span = styled.span`
   font-size: 26px;
   font-weight: 600;
 `;
+export const Info = styled.p`
+  color: #ff020f;
+  font-size: 26px;
+`;
