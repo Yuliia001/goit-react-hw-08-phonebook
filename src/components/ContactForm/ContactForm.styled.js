@@ -8,6 +8,7 @@ export const StyledForm = styled(Form)`
   border: 1px solid #04273b;
   padding: 24px;
   border-radius: 5px;
+  margin-bottom: 10px;
 `;
 export const Input = styled(Field)`
   padding: 14px;
@@ -47,4 +48,7 @@ export const Title = styled.h2`
   color: #04273b;
   font-size: 40px;
   margin-bottom: 10px;
+`;
+export const Wrapper = styled.div`
+  padding: 24px;
 `;

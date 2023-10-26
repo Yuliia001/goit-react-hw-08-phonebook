@@ -13,6 +13,11 @@ export const ListItem = styled.li`
   font-size: 26px;
 `;
 export const Text = styled.p`
-  color: red;
+  color: #04273a;
   font-size: 26px;
+`;
+export const Span = styled.span`
+  color: #04273b;
+  font-size: 26px;
+  font-weight: 600;
 `;

@@ -1,4 +1,4 @@
-import { ListItem, Text, Title } from './ContactsList.styled';
+import { ListItem, Span, Text, Title } from './ContactsList.styled';
 import { useDispatch, useSelector } from 'react-redux';
 import { deleteContact } from 'redux/contacts/operations';
 import { filteredContacts } from 'redux/contacts/selectors';
@@ -14,8 +14,8 @@ export const ContactList = () => {
         <ul>
           {contacts.map(({ id, name, number }) => (
             <ListItem key={id}>
-              <p> {name} :</p>
-              <span> {number}</span>
+              <Text> {name} :</Text>
+              <Span> {number}</Span>
               <button type="button" onClick={() => dispatch(deleteContact(id))}>
                 Delete
               </button>

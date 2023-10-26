@@ -1,7 +1,13 @@
 import { Formik } from 'formik';
 import * as Yup from 'yup';
 import { useDispatch } from 'react-redux';
-import { ErrMessage } from './RegisterForm.styled';
+import {
+  Button,
+  ErrMessage,
+  Input,
+  Label,
+  StyledForm,
+} from './RegisterForm.styled';
 import { register } from 'redux/auth/operations';
 
 const RegisterSchema = Yup.object().shape({
@@ -38,26 +44,26 @@ export const RegisterForm = () => {
     >
       {({ isSubmitting }) => (
         <>
-          <form>
-            <label>
+          <StyledForm>
+            <Label>
               Username
-              <input type="text" name="name" />
+              <Input type="text" name="name" />
               <ErrMessage name="name" component="div" />
-            </label>
-            <label>
+            </Label>
+            <Label>
               Email
-              <input type="email" name="email" />
+              <Input type="email" name="email" />
               <ErrMessage name="number" component="div" />
-            </label>
-            <label>
+            </Label>
+            <Label>
               Password
-              <input type="password" name="password" />
+              <Input type="password" name="password" />
               <ErrMessage name="name" component="div" />
-            </label>
-            <button type="submit" disabled={isSubmitting}>
+            </Label>
+            <Button type="submit" disabled={isSubmitting}>
               Register
-            </button>
-          </form>
+            </Button>
+          </StyledForm>
         </>
       )}
     </Formik>

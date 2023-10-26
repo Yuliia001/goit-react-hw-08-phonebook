@@ -1,4 +1,5 @@
 import { ContactForm } from 'components/ContactForm/ContactForm';
+import { Wrapper } from 'components/ContactForm/ContactForm.styled';
 import { ContactList } from 'components/ContactsList/ContactsList';
 import { Error } from 'components/Error/Error.styled';
 import { Loader } from 'components/Loader/Loader';
@@ -18,7 +19,7 @@ export default function Contacts() {
   }, [dispatch]);
 
   return (
-    <div>
+    <Wrapper>
       <Helmet>
         <title>Your contact list</title>
       </Helmet>
@@ -28,6 +29,6 @@ export default function Contacts() {
       {error && (
         <Error>Oops! Something went wrong. Please reload the page.</Error>
       )}
-    </div>
+    </Wrapper>
   );
 }

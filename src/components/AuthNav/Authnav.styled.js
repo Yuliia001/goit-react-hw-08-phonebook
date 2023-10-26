@@ -4,15 +4,14 @@ import styled from 'styled-components';
 export const Link = styled(NavLink)`
   display: inline-block;
   text-decoration: none;
-  padding: 12px;
+  padding: 16px;
   font-weight: 700;
-  color: black;
+  color: #04273b;
+  font-size: 24px;
+  text-transform: uppercase;
+}
   &:hover {
-    background-color: white;
-    color: black;
+    color: #eb7750;
   }
-  &:activ {
-    background-color: yellow;
-    color: blau;
-  }
+   
 `;

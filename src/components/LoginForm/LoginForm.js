@@ -2,7 +2,13 @@ import { Formik } from 'formik';
 import * as Yup from 'yup';
 import { useDispatch } from 'react-redux';
 import { logIn } from 'redux/auth/operations';
-import { ErrMessage } from './LoginForm.styled';
+import {
+  ErrMessage,
+  Label,
+  StyledForm,
+  Button,
+  Input,
+} from './LoginForm.styled';
 
 const LogInSchema = Yup.object().shape({
   name: Yup.string()
@@ -21,7 +27,7 @@ const LogInSchema = Yup.object().shape({
 export const LoginForm = () => {
   const dispatch = useDispatch();
 
-  const handlerSubmitForm = (values, actions) => {
+  const handlerSubmit = (values, actions) => {
     dispatch(logIn(values));
 
     actions.resetForm();
@@ -33,25 +39,25 @@ export const LoginForm = () => {
         password: '',
       }}
       validationSchema={LogInSchema}
-      onSubmit={handlerSubmitForm}
+      onSubmit={handlerSubmit}
     >
       {({ isSubmitting }) => (
         <>
-          <form>
-            <label>
+          <StyledForm>
+            <Label>
               Email
-              <input type="email" name="email" />
+              <Input type="email" name="email" />
               <ErrMessage name="number" component="div" />
-            </label>
-            <label>
+            </Label>
+            <Label>
               Password
-              <input type="password" name="password" />
+              <Input type="password" name="password" />
               <ErrMessage name="name" component="div" />
-            </label>
-            <button type="submit" disabled={isSubmitting}>
+            </Label>
+            <Button type="submit" disabled={isSubmitting}>
               Log In
-            </button>
-          </form>
+            </Button>
+          </StyledForm>
         </>
       )}
     </Formik>
