@@ -1,10 +1,10 @@
 import { Formik } from 'formik';
 import * as Yup from 'yup';
 import { useDispatch } from 'react-redux';
-import { ErrMessage } from './RegisterForm.styled';
-import { register } from 'redux/auth/operations';
+import { logIn } from 'redux/auth/operations';
+import { ErrMessage } from './LoginForm.styled';
 
-const RegisterSchema = Yup.object().shape({
+const LogInSchema = Yup.object().shape({
   name: Yup.string()
     .min(3, 'Too Short!')
     .matches(
@@ -18,32 +18,26 @@ const RegisterSchema = Yup.object().shape({
     .required('Required'),
 });
 
-export const RegisterForm = () => {
+export const LoginForm = () => {
   const dispatch = useDispatch();
 
   const handlerSubmitForm = (values, actions) => {
-    dispatch(register(values));
+    dispatch(logIn(values));
 
     actions.resetForm();
   };
   return (
     <Formik
       initialValues={{
-        name: '',
         email: '',
         password: '',
       }}
-      validationSchema={RegisterSchema}
+      validationSchema={LogInSchema}
       onSubmit={handlerSubmitForm}
     >
       {({ isSubmitting }) => (
         <>
           <form>
-            <label>
-              Username
-              <input type="text" name="name" />
-              <ErrMessage name="name" component="div" />
-            </label>
             <label>
               Email
               <input type="email" name="email" />
@@ -55,7 +49,7 @@ export const RegisterForm = () => {
               <ErrMessage name="name" component="div" />
             </label>
             <button type="submit" disabled={isSubmitting}>
-              Register
+              Log In
             </button>
           </form>
         </>
